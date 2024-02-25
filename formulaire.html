@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3324be;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>CV Generator</h1>
+  <form>
+    <label for="image">Upload Your Image:</label>
+    <input type="file" id="image" name="image" accept="image/*"><br><br>
+    <h1>Informations personnelles
+    </h1>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" required>
+    <h1>Compétences
+    </h1>
+    <label for="1er com"></label>
+    <input type="text" id="firstcom" name="1er com" required>
+
+    <label for="2eme com"></label>
+    <input type="text" id="2eme com" name="2eme com" required>
+
+    <label for="3eme com"></label>
+    <input type="text" id="w" name="w" required>
+
+    <label for="4eme com"></label>
+    <input type="text" id="phone" name="phone" required>
+
+    <h1>Cursus</h1>
+    <label for="First"></label>
+    <input type="text" id="First" name="first" required>
+
+    <label for="last"></label>
+    <input type="text" id="last" name="last" required>
+
+    <label for="3eme "></label>
+    <input type="text" id="w" name="w" required>
+     <h1>language</h1>
+    <input type="text" id="language" name="language" required>
+    <label for="First"></label>
+    <input type="text" id="First" name="first" required>
+
+    <h1> loisirs</h1>
+    <input type="text" id="First" name="first" required>
+    <label for="First"></label>
+    <input type="text" id="First" name="first" required>
+
+    <input type="submit" value="Generate CV" formaction="cv.html">
+  </form>
+</div>
+
+</body>
+<script>
+    document.getElementById('cvForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche la soumission du formulaire
+
+      var formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        competence: document.getElementById('competence').value,
+        cursus: document.getElementById('cursus').value,
+        language: document.getElementById('language').value,
+        loisirs: document.getElementById('loisirs').value
+      };
+
+      // Stockage des données dans le LocalStorage
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      // Redirection vers la page "cv.html"
+      window.location.href = 'cv.html';
+    });
+  </script>
+  
+</html>
